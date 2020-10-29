@@ -21,12 +21,19 @@ return true; //function is meant to return true
 //still call the function below its declaration and visuallyt ensure that the msg printed to the console is accurate.
 
 const assertArraysEqual = (arr1, arr2) => {
-  if(eqArrays(arr1, arr2)) {
-    console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
-  } else if (!eqArrays(arr1, arr2)) {
-    console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
+  if(Array.isArray(arr1) && Array.isArray(arr2)) {
+    if(eqArrays(arr1, arr2)) {
+      console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
+    } else {
+      console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
+    }
+  } else if (arr1 === undefined && arr2 === undefined) {
+    console.log(`ASSERTION PASSED✅✅✅: undefined === undefined`);
+  } else {
+    console.log(`ASSERTION FAILED❌❌❌: arr1 is NOT an array AND/OR arr2 is NOT an arary`);
   }
 }
+
 
 
 //TEST CODE

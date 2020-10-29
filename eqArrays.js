@@ -15,13 +15,20 @@ return true; //function is meant to return true
 
 
 
-const assertEqual = (actual, expected) => {
-  if (actual === expected) {
-    console.log(`ASSERTION PASSED✅✅✅: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`ASSERTION FAILED❌❌❌: ${actual} !== ${expected}`);
+const assertArraysEqual = (arr1, arr2) => {
+  if(Array.isArray(arr1) && Array.isArray(arr2)) {
+    if(eqArrays(arr1, arr2)) {
+      console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
+    } else {
+      console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
+    }
+  } else if (arr1 === undefined && arr2 === undefined) {
+    console.log(`ASSERTION PASSED✅✅✅: undefined === undefined`);
+  } else {
+    console.log(`ASSERTION FAILED❌❌❌: arr1 is NOT an array AND/OR arr2 is NOT an arary`);
   }
-};
+}
+
 
 // TEST CODE
 // console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true

@@ -13,12 +13,19 @@ return true; //function is meant to return true
 };
 
 const assertArraysEqual = (arr1, arr2) => {
-  if(eqArrays(arr1, arr2)) {
-    console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
-  } else if (!eqArrays(arr1, arr2)) {
-    console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
+  if(Array.isArray(arr1) && Array.isArray(arr2)) {
+    if(eqArrays(arr1, arr2)) {
+      console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
+    } else {
+      console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
+    }
+  } else if (arr1 === undefined && arr2 === undefined) {
+    console.log(`ASSERTION PASSED✅✅✅: undefined === undefined`);
+  } else {
+    console.log(`ASSERTION FAILED❌❌❌: arr1 is NOT an array AND/OR arr2 is NOT an arary`);
   }
 }
+
 
 
 //implement middle which takes in an array and returns the middle-most elements of the array
