@@ -7,22 +7,22 @@
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
-  } 
+  }
 
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) {
       return false;
-    } 
+    }
   }
-return true;
+  return true;
 
 };
 
 // Array.isArray()
 
 const assertArraysEqual = (arr1, arr2) => {
-  if(Array.isArray(arr1) && Array.isArray(arr2)) {
-    if(eqArrays(arr1, arr2)) {
+  if (Array.isArray(arr1) && Array.isArray(arr2)) {
+    if (eqArrays(arr1, arr2)) {
       console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
     } else {
       console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
@@ -32,7 +32,7 @@ const assertArraysEqual = (arr1, arr2) => {
   } else {
     console.log(`ASSERTION FAILED❌❌❌: arr1 is NOT an array AND/OR arr2 is NOT an arary`);
   }
-}
+};
 
 
 /*
@@ -50,7 +50,7 @@ const assertArraysEqual = (arr1, arr2) => {
 const letterPositions = (sentence) => {
   const results = {};
 
-  for (index in sentence) {
+  for (const index in sentence) {
     let element = sentence[index];
     
     if (results[element]) {
@@ -62,7 +62,7 @@ const letterPositions = (sentence) => {
     }
 
   }
-  return results
+  return results;
 };
 
 let letterPosOfHello = letterPositions('hello');
@@ -71,14 +71,14 @@ let letterPosOfHello = letterPositions('hello');
 
 //TESTCODE
 assertArraysEqual(letterPositions('hello').e, [1]);
-assertArraysEqual((letterPosOfHello['h']), [0])
-assertArraysEqual((letterPosOfHello['l']), [2, 3])
-assertArraysEqual((letterPosOfHello['a']), undefined)
+assertArraysEqual((letterPosOfHello['h']), [0]);
+assertArraysEqual((letterPosOfHello['l']), [2, 3]);
+assertArraysEqual((letterPosOfHello['a']), undefined);
 
 
 
 /*
-    output => 
+    output =>
     {
       'h': [0]
       'e': [1]

@@ -15,7 +15,7 @@ const eqArrays = (arr1, arr2) => {
       return false;
     }
   }
-  return true
+  return true;
 
 };
 
@@ -32,7 +32,7 @@ const assertArraysEqual = (arr1, arr2) => {
   } else {
     console.log(`ASSERTION FAILED❌❌❌: arr1 is NOT an array AND/OR arr2 is NOT an arary`);
   }
-}
+};
 
 // first attempt
 // const takeUntil = function (array, callback) {
@@ -58,7 +58,7 @@ const assertArraysEqual = (arr1, arr2) => {
 //   // ...
 // }
 
-const takeUntil = function (array, callback) {
+const takeUntil = function(array, callback) {
   let output = [];
   for (let item of array) {
     if (callback(item) === false) {
@@ -67,7 +67,7 @@ const takeUntil = function (array, callback) {
       return output;
     }
   }
-}
+};
 
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
