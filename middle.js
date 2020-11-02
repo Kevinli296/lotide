@@ -1,32 +1,5 @@
-const eqArrays = (arr1, arr2) => { //function with 2 params (array 1 and array 2)
-  if (arr1.length !== arr2.length) { //if the length of the first array is not equal to the second, by default its not the same, so false
-    return false;
-  } 
-
-  for (let i = 0; i < arr1.length; i++) { //i as iterator variable, iterating over arr1 elements
-    if (arr1[i] !== arr2[i]) { //if the iteration of arr1 does not equal to iteration of arr2
-      return false; //short circuit the function and print false
-    } 
-  }
-return true; //function is meant to return true
-
-};
-
-const assertArraysEqual = (arr1, arr2) => {
-  if(Array.isArray(arr1) && Array.isArray(arr2)) {
-    if(eqArrays(arr1, arr2)) {
-      console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
-    } else {
-      console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
-    }
-  } else if (arr1 === undefined && arr2 === undefined) {
-    console.log(`ASSERTION PASSED✅✅✅: undefined === undefined`);
-  } else {
-    console.log(`ASSERTION FAILED❌❌❌: arr1 is NOT an array AND/OR arr2 is NOT an arary`);
-  }
-}
-
-
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 //implement middle which takes in an array and returns the middle-most elements of the array
 //middle function should return an array with only the middle elements of the provided array.
@@ -65,27 +38,4 @@ const middle = (midArr) => { //defining function middle with parameter midArr
   return middle; //return middle result array
 }
 
-//for arrays with one or two elements, return an empty array.
-//ex.
-console.log(middle([1])) // => []
-console.log(middle([1, 2])) // => []
-
-//for arrays with odd numbers elements, an array containing a single middle element should be returned.
-//ex.
-console.log(middle([1, 2, 3])) // => [2]
-console.log(middle([1, 2, 3, 4, 5])) // => [3]
-
-//for arrays with even numbers elements, an array containing the two middle should be returned.
-//ex.
-console.log(middle([1, 2, 3, 4])) // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])) // => [3, 4]
-
-
-console.log(middle([1, 4, 3, 2, 6, 8])); // => [3, 2]
-//write test assertions for the various scenarios with middle
-
-const test1 = ['hi', 'bye', 'hello', 'whatsup','morning'];
-const test2 = ['hi', 'bye', 'hello', 'whatsup','morning', 'night'];
-
-assertArraysEqual(middle(test1), middle(test2))
-assertArraysEqual(middle(test1), middle(test1))
+module.exports = middle;
