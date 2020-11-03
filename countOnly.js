@@ -1,10 +1,13 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`ASSERTION PASSED✅✅✅: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`ASSERTION FAILED❌❌❌: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
+
+
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected) {
+//     console.log(`ASSERTION PASSED✅✅✅: ${actual} === ${expected}`);
+//   } else if (actual !== expected) {
+//     console.log(`ASSERTION FAILED❌❌❌: ${actual} !== ${expected}`);
+//   }
+// };
 
 //this function should take in a collection of items
 //return counts for a specific subset of those items
@@ -19,19 +22,6 @@ const assertEqual = function(actual, expected) {
 // start by defining the function
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
-
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
 
 
 const countOnly = (allItems, itemsToCount) => {
@@ -50,7 +40,7 @@ const countOnly = (allItems, itemsToCount) => {
   return results;
 };
 
-
+module.exports = countOnly;
 
 const result1 = countOnly(firstNames, {
   "Jason": true,
@@ -58,10 +48,3 @@ const result1 = countOnly(firstNames, {
   "Fang": true,
   "Agouhanna": false
 });
-
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
-
-//the function should report back how many instances of each string were found in the allItems array

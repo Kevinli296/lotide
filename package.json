@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@kevinli296/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "A library of functions :)",
+  "main": "lotide",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/Kevinli296/lotide.git"
   },
-  "author": "",
+  "author": 
+  {"name": "Kevin Li"
+ , "email": "kevinli296@outlook.com"
+ , "url": "https://github.com/Kevinli296"},
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Kevinli296/lotide/issues"

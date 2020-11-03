@@ -1,24 +1,28 @@
-const eqArrays = (arr1, arr2) => { //function with 2 params (array 1 and array 2)
-  if (arr1.length !== arr2.length) { //if the length of the first array is not equal to the second, by default its not the same, so false
-    return false;
-  }
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
-  for (let i = 0; i < arr1.length; i++) { //i as iterator variable, iterating over arr1 elements
-    if (arr1[i] !== arr2[i]) { //if the iteration of arr1 does not equal to iteration of arr2
-      return false; //short circuit the function and print false
-    }
-  }
-  return true; //function is meant to return true
 
-};
+// const eqArrays = (arr1, arr2) => { //function with 2 params (array 1 and array 2)
+//   if (arr1.length !== arr2.length) { //if the length of the first array is not equal to the second, by default its not the same, so false
+//     return false;
+//   }
 
-const assertArraysEqual = (arr1, arr2) => {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
-  } else if (!eqArrays(arr1, arr2)) {
-    console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
-  }
-};
+//   for (let i = 0; i < arr1.length; i++) { //i as iterator variable, iterating over arr1 elements
+//     if (arr1[i] !== arr2[i]) { //if the iteration of arr1 does not equal to iteration of arr2
+//       return false; //short circuit the function and print false
+//     }
+//   }
+//   return true; //function is meant to return true
+
+// };
+
+// const assertArraysEqual = (arr1, arr2) => {
+//   if (eqArrays(arr1, arr2)) {
+//     console.log(`ASSERTION PASSED✅✅✅: ${arr1} === ${arr2}`);
+//   } else if (!eqArrays(arr1, arr2)) {
+//     console.log(`ASSERTION FAILED❌❌❌: ${arr1} === ${arr2}`);
+//   }
+// };
 
 //implement without function, which will return a subset of a given array that removes unwanted elements
 //the function should take in a SOURCE array, and an ITEMSTOREMOVE array.
@@ -40,14 +44,4 @@ let without = (source, itemsToRemove) => {
   return output;
 };
 
-//ex:
-const words = ["hello", "world", "lighthouse"];
-console.log(without(words, ["lighthouse"])); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-
-
-//expected output:
-console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
-
+module.exports = without;

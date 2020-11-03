@@ -53,13 +53,4 @@ const flatten = (arr) => {
   return result;
 };
 
-
-/*
-INDEX
-0 1  2     3  4
-1 2 [3, 4] 5 [6]
-ELEMENT
-*/
-
-//expected output:
-console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
+module.exports = flatten;
